@@ -16,19 +16,30 @@ export const ProgressBar = ({ currentCategory }: ProgressBarProps) => {
         {categories.map((cat, index) => {
           const isActive = cat === currentCategory;
           const isPast = index < currentIndex;
-          
-          return (
-            <div key={cat} className="flex-1 flex flex-col items-center space-y-3">
-              {/* The progress line/indicator */}
-              <div className={`
-                w-full h-[2px] rounded-full transition-all duration-700 ease-in-out
-                ${isActive 
-                  ? 'bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] scale-y-150' 
-                  : isPast 
-                    ? 'bg-blue-800' 
-                    : 'bg-white/10'
-                }
-              `} />
+
+
+
+      
+         const progressLineClasses = `
+  w-full h-[2px] rounded-full transition-all duration-700 ease-in-out
+  ${
+    isActive
+      ? "bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] scale-y-150"
+      : isPast
+      ? "bg-blue-800"
+      : "bg-white/10"
+  }
+`;
+
+return (
+  <div key={cat} className="flex-1 flex flex-col items-center space-y-3">
+    {/* The progress line/indicator */}
+    <div className={progressLineClasses} />
+  </div>
+);
+
+
+      
               
               {/* The label */}
               <span className={`
