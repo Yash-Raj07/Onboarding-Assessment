@@ -48,17 +48,21 @@ export const SliderInput = ({ value, min, max, onChange, description }: SliderIn
           />
 
           {/* Custom Handle */}
-          <div 
-            className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.8)] z-10 pointer-events-none transition-all duration-300"
-            style={{ left: `${((value - min) / (max - min)) * 100}%` }}
-          >
-            {/* Tooltip Label */}
-            {getLabel(value) && (
-              <div className="absolute top-8 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap font-bold uppercase tracking-wider">
-                {getLabel(value)}
-              </div>
-            )}
-          </div>
+     <div
+    className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.8)] z-10 pointer-events-none transition-all duration-300"
+    style={{ left: `${thumbPosition}%` }}
+  >
+    {/* Tooltip Label */}
+    {label && (
+      <div className="absolute top-8 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap font-bold uppercase tracking-wider">
+        {label}
+      </div>
+    )}
+  </div>
+);
+
+
+          
         </div>
       </div>
     </div>
