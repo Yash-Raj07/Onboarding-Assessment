@@ -23,7 +23,6 @@ export default function AssessmentPage() {
     prevStep, 
     isAnswered, 
     isComplete, 
-    answers,
     resetAssessment 
   } = useAssessment();
 
@@ -32,7 +31,7 @@ export default function AssessmentPage() {
   
   useEffect(() => {
     if (isComplete && !showLoading && !showDisclaimer && !showSummary) {
-      setShowDisclaimer(true);
+      setShowDisclaimer(true); // eslint-disable-line react-hooks/set-state-in-effect
     }
   }, [isComplete, showLoading, showDisclaimer, showSummary]);
 

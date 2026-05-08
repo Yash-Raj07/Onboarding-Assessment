@@ -17,30 +17,21 @@ export const ProgressBar = ({ currentCategory }: ProgressBarProps) => {
           const isActive = cat === currentCategory;
           const isPast = index < currentIndex;
 
-
-
-      
-    return (
-  <div key={cat} className="flex-1 flex flex-col items-center space-y-3">
-    {/* The progress line/indicator */}
-    <div
-      className={`
-        w-full h-[2px] rounded-full transition-all duration-700 ease-in-out
-        ${
-          isActive
-            ? 'bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] scale-y-150'
-            : isPast
-              ? 'bg-blue-800'
-              : 'bg-white/10'
-        }
-      `}
-    />
-  </div>
-);
-
-
-      
-              
+          return (
+            <div key={cat} className="flex-1 flex flex-col items-center space-y-3">
+              {/* The progress line/indicator */}
+              <div
+                className={`
+                  w-full h-[2px] rounded-full transition-all duration-700 ease-in-out
+                  ${
+                    isActive
+                      ? 'bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] scale-y-150'
+                      : isPast
+                        ? 'bg-blue-800'
+                        : 'bg-white/10'
+                  }
+                `}
+              />
               {/* The label */}
               <span className={`
                 text-[10px] uppercase tracking-[0.15em] font-bold transition-all duration-500

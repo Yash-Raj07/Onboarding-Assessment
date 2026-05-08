@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import { useAssessment } from '../context/AssessmentContext';
+// import { useAssessment } from '../context/AssessmentContext';
 
 
 
 export const FortressProfile = ({ onReset }: { onReset: () => void }) => {
-  const { answers } = useAssessment();
+  // const { answers } = useAssessment();
 
   // Mock calculation logic for educational purposes
   const calculateScore = () => 30; // Matches image

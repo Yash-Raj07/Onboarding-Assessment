@@ -35,7 +35,9 @@ export const AssessmentProvider = ({ children }: { children: ReactNode }) => {
     const saved = localStorage.getItem('onboarding-assessment');
     if (saved) {
       const { currentStep: savedStep, answers: savedAnswers } = JSON.parse(saved);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentStep(savedStep);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setAnswers(savedAnswers);
     }
   }, []);
