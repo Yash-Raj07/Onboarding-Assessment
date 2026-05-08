@@ -66,22 +66,38 @@ export const DisclaimerScreen = ({ onAccept, onBack }: { onAccept: () => void; o
           </svg>
         </button>
 
+        
+        
         <button
-          onClick={onAccept}
-          disabled={!agreed}
-          className={`
-            flex items-center space-x-3 px-8 py-3 rounded-full border transition-all
-            ${agreed 
-              ? 'bg-blue-600 border-blue-500 text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.4)]' 
-              : 'border-white/10 text-gray-700 cursor-not-allowed'
-            }
-          `}
-        >
-          <span className="font-semibold">Next</span>
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </button>
+  type="button"
+  onClick={onAccept}
+  disabled={!agreed}
+  className={[
+    "flex items-center gap-3 px-8 py-3 rounded-full border transition-all duration-200",
+    agreed
+      ? "bg-blue-600 border-blue-500 text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.4)]"
+      : "border-white/10 text-gray-700 cursor-not-allowed",
+  ].join(" ")}
+>
+  <span className="font-semibold">Next</span>
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-5 w-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M14 5l7 7m0 0l-7 7m7-7H3"
+    />
+  </svg>
+</button>
+
+        
       </div>
     </div>
   );
