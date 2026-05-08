@@ -128,31 +128,16 @@ export const FortressProfile = ({ onReset }: { onReset: () => void }) => {
 
 
 
-type AllocationItemProps = {
-  title: string;
-  desc: string;
-  percent: string;
-};
-
-const AllocationItem = ({
-  title,
-  desc,
-  percent,
-}: AllocationItemProps) => {
-  const containerClasses =
-    "glass-light bg-white/[0.03] p-6 rounded-2xl flex items-center justify-between cursor-default transition-all hover:bg-white/5 group";
-
-  const percentClasses =
-    "text-2xl font-medium text-white transition-colors group-hover:text-blue-400";
-
+function AllocationItem({ title, desc, percent }: { title: string; desc: string; percent: string }) {
   return (
-    <div className={containerClasses}>
+    <div className="glass-light bg-white/[0.03] p-6 rounded-2xl flex justify-between items-center group hover:bg-white/5 transition-all cursor-default">
       <div className="space-y-1">
-        <h4 className="font-semibold text-white">{title}</h4>
-        <p className="text-xs text-gray-500">{desc}</p>
+        <h4 className="text-white font-semibold">{title}</h4>
+        <p className="text-gray-500 text-xs">{desc}</p>
       </div>
-
-      <span className={percentClasses}>{percent}</span>
+      <div className="text-2xl font-medium text-white group-hover:text-blue-400 transition-colors">
+        {percent}
+      </div>
     </div>
   );
-};
+}
